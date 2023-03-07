@@ -1,5 +1,4 @@
 ```
-             uptime: 4w2d14h23m32s
             version: 6.48.6 (long-term)
          build-time: Dec/03/2021 12:15:05
    factory-software: 6.45.9
