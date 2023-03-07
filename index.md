@@ -1,6 +1,5 @@
 # Setting Firewall Filter
 * * *
-- Masuk ke winbox console
 * * *
 
 ```
