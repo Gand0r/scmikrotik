@@ -1,3 +1,5 @@
+Versi Mikrotik yang saya gunakan
+
 ```
             version: 6.48.6 (long-term)
          build-time: Dec/03/2021 12:15:05
