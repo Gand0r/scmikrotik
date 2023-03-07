@@ -3,6 +3,7 @@
 - Masuk ke winbox console
 * * *
 
+```
 /ip firewall filter
 add action=accept chain=forward dst-address-list=Bm src-address-list=\
     "BM Client"
@@ -35,3 +36,4 @@ add action=add-dst-to-address-list address-list=ML \
     dst-port=30000-30110 protocol=tcp src-address-list="boleh internet"
 add action=drop chain=forward comment="Drop ML" dst-address-list=ML \
     protocol=tcp src-address-list="boleh internet"
+```
