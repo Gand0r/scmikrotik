@@ -41,6 +41,7 @@ add action=drop chain=forward comment="Drop ML" dst-address-list=ML \
 # Adding Mac
 * * *
 * * *
+```
 /interface wireless access-list
 add comment=WDCP interface=wlan1 mac-address=00:23:A7:EF:2B:66
 add comment=WDCP interface=wlan1 mac-address=00:23:A7:EB:BC:EE
@@ -145,3 +146,4 @@ add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:B9:92:2E
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
 add comment=WDCP interface=wlan1 mac-address=9C:A5:25:FF:A1:A
+```
