@@ -37,7 +37,6 @@ add action=drop chain=forward comment="Drop ML" dst-address-list=ML \
     protocol=tcp src-address-list="boleh internet"
 ```
 
-
 # Adding Mac
 * * *
 * * *
@@ -146,4 +145,61 @@ add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:B9:92:2E
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
 add comment=WDCP interface=wlan1 mac-address=9C:A5:25:FF:A1:A
+```
+
+# Add IP Address
+* * *
+* * *
+```
+/ip address
+add address=ip-mu interface=ether2 
+add address=ip-mu interface=ether4
+add address=ip-mu interface=ether1
+```
+
+# Add IP Firewall Filter
+* * *
+* * *
+```
+ip firewall filter
+add action=reject chain=forward comment=RANSOMWARE dst-port=445 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=135-139 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=3389 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=445 \
+    protocol=udp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=135-139 \
+    protocol=udp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=3389 \
+    protocol=udp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE reject-with=\
+    icmp-network-unreachable src-address-list=BLOCKED
+add action=reject chain=forward comment=RANSOMWARE dst-address-list=\
+    BLOCKED reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=445 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=135-139 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE dst-port=3389 \
+    protocol=tcp reject-with=icmp-network-unreachable
+add action=reject chain=forward comment=RANSOMWARE protocol=udp \
+    reject-with=icmp-network-unreachable src-port=445
+add action=reject chain=forward comment=RANSOMWARE protocol=udp \
+    reject-with=icmp-network-unreachable src-port=135-139
+add action=reject chain=forward comment=RANSOMWARE protocol=udp \
+    reject-with=icmp-network-unreachable src-port=3389
+add action=drop chain=input comment=Block_HACKED dst-address=\
+    ip-provider dst-port=22,23,80,443 protocol=tcp
+add action=drop chain=input comment=Block_HACKED dst-address=\
+    ip-provider dst-port=22,23,80,443 protocol=udp
+add action=drop chain=forward comment=RouterEDC dst-address-list=\
+    !HostEDC src-address-list=RBEDC
+/ip firewall service-port
+set ftp disabled=yes
+set tftp disabled=yes
+set irc disabled=yes
+set h323 disabled=yes
+set sip disabled=yes
 ```
