@@ -205,7 +205,7 @@ set sip disabled=yes
 ```
 
 
-# # # To set up VLAN 75 on an Aruba 6000 switch with an IP address of 192.168.75.100 and routing to 192.168.75.254, you will need to follow these steps:
+### To set up VLAN 75 on an Aruba 6000 switch with an IP address of 192.168.75.100 and routing to 192.168.75.254, you will need to follow these steps:
 
 * * *
 * * *
