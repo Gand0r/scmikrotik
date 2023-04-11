@@ -203,3 +203,48 @@ set irc disabled=yes
 set h323 disabled=yes
 set sip disabled=yes
 ```
+
+
+# To set up VLAN 75 on an Aruba 6000 switch with an IP address of 192.168.75.100 and routing to 192.168.75.254, you will need to follow these steps:
+* * *
+* * *
+
+    Connect to the switch: Use a console cable to connect your computer to the Aruba 6000 switch. Then, open a terminal program on your computer to access the command-line interface (CLI) of the switch.
+    
+    Configure VLAN 75: To configure VLAN 75, enter the following commands:
+```
+(config)# vlan 75
+(config-vlan-75)# name VLAN75
+```
+> This creates VLAN 75 and gives it a name of VLAN75.
+
+    Configure the VLAN interface: To configure the VLAN interface for VLAN 75, enter the following commands:
+```
+(config)# interface vlan 75
+(config-if-Vlan75)# ip address 192.168.75.100 255.255.255.0
+(config-if-Vlan75)# no shutdown
+```
+> This configures the VLAN interface with the IP address 192.168.75.100 and enables it.
+
+    Configure the default gateway: To configure the default gateway for VLAN 75, enter the following command:
+```
+(config)# ip route 0.0.0.0 0.0.0.0 192.168.75.254
+```
+> This sets the default gateway for VLAN 75 to 192.168.75.254.
+
+    Configure the ports: To configure the ports for VLAN 75, enter the following commands:
+```
+(config)# interface <interface name>
+(config-if)# switchport mode access
+(config-if)# switchport access vlan 75
+(config-if)# no shutdown
+```
+> Replace <interface name> with the name or number of the interface you want to configure. This sets the port to access mode, assigns it to VLAN 75, and enables it.
+
+  Verify the configuration: To verify that the VLAN and port configurations are correct, enter the following command:
+```
+# show vlan brief
+``` 
+> This command displays a summary of all configured VLANs and the ports assigned to each VLAN.
+
+That's it! You have successfully configured VLAN 75 on your Aruba 6000 switch with an IP address of 192.168.75.100 and routing to 192.168.75.254.
