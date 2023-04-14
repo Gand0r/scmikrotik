@@ -255,11 +255,11 @@ That's it! You have successfully configured VLAN 75 on your Aruba 6000 switch wi
 ### Reinstall WSL (Windows Subsystem for Linux), you can follow these steps:
 
 - Open PowerShell as an administrator.
-- Run the command dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux to disable WSL.
+- Run the command dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
 - Restart your computer.
 - Open PowerShell as an administrator again.
-- Run the command dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart to enable WSL and its dependencies.
-- Run the command Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform to install the virtual machine platform.
+- Run the command dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+- Run the command Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 - Download and install the latest version of the Linux distribution you want to use from the Microsoft Store.
 - Launch the Linux distribution and complete the setup process.
 
