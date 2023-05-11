@@ -144,7 +144,7 @@ add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:B9:92:2E
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:B9:92:2E
 add comment=WDCP-CAD interface=wlan1 mac-address=00:23:A7:AF:55:AC
-add comment=WDCP interface=wlan1 mac-address=9C:A5:25:FF:A1:A
+add comment=WDCP interface=wlan1 mac-address=9C:A5:25:FF:A1:A1
 ```
 
 # Add IP Address
